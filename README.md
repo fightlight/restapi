@@ -165,9 +165,20 @@ Deploy instructions
                maxThread=150
                redirectPort="8444" />
 ```
-0. Install and configure nginx
+0. Install nginx, add to "http" section of nginx.conf the following
 ```
-...
+server {
+    listen localhost:80;
+    location / {
+       proxy_pass http://127.0.0.1:8080/;
+    }
+    location /users/info/ {
+       proxy_pass http://127.0.0.1:8081/users/info/;
+    }
+    location /stat/ {
+       proxy_pass http://127.0.0.1:8081/stat/;
+    }
+}
 ```
 0. Copy project's ".war" file to `<tomcatDir>/webapps`
 0. Wait for deploy and try url
