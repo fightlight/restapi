@@ -38,6 +38,7 @@ Request:
 }
 ```
 Response: 4
+
 Note: "username" is a required field
 
 
@@ -51,6 +52,7 @@ Accept: application/json
 
 ### example
 Request: /users/info/4
+
 Response:
 ```
 {
@@ -105,8 +107,8 @@ Accept: application/json
 ```
 
 ### example
-Request:
-    /stat/userStatus/ONLINE/timestamp/1440728447404
+Request: `/stat/userStatus/ONLINE/timestamp/1440728447404`
+    
 Response:
 ```
 {
@@ -160,11 +162,11 @@ Error format
 
 Deploy instructions
 ===================
-0. Edit MySQL username and password in "application.properties", "# Datasource" section.
+* Edit MySQL username and password in "application.properties", "# Datasource" section.
    Edit DB name (serverapidb by default) if needed
    Create DB scheme `<DB name>` in MySQL.
    Build project with Maven
-0. Install tomcat, edit connectors configuration in `<tomcatDir>/conf/server.xml`
+* Install tomcat, edit connectors configuration in `<tomcatDir>/conf/server.xml`
 ```
 <Connector port="8080" protocol="HTTP/1.1"
                connectionTimeout="20000"
@@ -175,7 +177,7 @@ Deploy instructions
                maxThread=150
                redirectPort="8444" />
 ```
-0. Install nginx, add to "http" section of nginx.conf the following
+* Install nginx, add to "http" section of nginx.conf the following
 ```
 server {
     listen localhost:80;
@@ -190,15 +192,17 @@ server {
     }
 }
 ```
-0. Copy project's ".war" file to `<tomcatDir>/webapps`
-0. Wait for deploy and try url
-`http://localhost/<war filename without ext>`
+* Copy project's ".war" file to `<tomcatDir>/webapps`
+* Wait for deploy and try url `http://localhost/<war filename without ext>`
 
 
 
 Spent time
 ==========
 Design 5h
+
 Coding 25h
+
 Docs 2h
+
 Learning ...
