@@ -3,10 +3,12 @@ API DOC
 
 Image uploading
 ---------------
+```
 url: /images
 method: POST
 ContentType: multipart/form-data
 Accept: application/json
+```
 
 ### example
 Response:
@@ -19,10 +21,12 @@ Response:
 
 Adding a user
 -------------
+```
 url: /users
 method: POST
 ContentType: application/json
 Accept: application/json
+```
 
 ### example
 Request:
@@ -39,9 +43,11 @@ Note: "username" is a required field
 
 Getting user info
 -----------------
+```
 url: /users/info/{userId}
 method: GET
 Accept: application/json
+```
 
 ### example
 Request: /users/info/4
@@ -60,10 +66,12 @@ Response:
 
 Changing user status
 --------------------
+```
 url: /users/status
 method: PUT
 ContentType: application/json
 Accept: application/json
+```
 
 ### example
 Request:
@@ -87,12 +95,14 @@ Note: userStatus is in UPPER CASE only (ONLINE, OFFLINE), all fields in request 
 
 Getting statistics
 ------------------
+```
 url: /stat/userStatus/{userStatus}/timestamp/{timestamp}
      /stat/userStatus/{userStatus}
      /stat/timestamp/{timestamp}
      /stat
 method: GET
 Accept: application/json
+```
 
 ### example
 Request:
